@@ -1,3 +1,15 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+    Header Section
+ */
+#topSocial{
+  background: #D8D8D8;
+  border: 1px soli #979797;
+  color: #565A5C;
+  font-size: .9em;
+  a{ text-decoration: none; color: #565A5C; }
+  .fa{ font-size: 1.5em; }
+}
