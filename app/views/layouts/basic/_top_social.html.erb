@@ -8,11 +8,27 @@
     
     <div class="p-2  align-self-center">
       <div class="d-flex p-1">
-        <%= link_to '<i class="mr-2 fa fa-facebook-official"></i>'.html_safe, "#" %>
-        <%= link_to '<i class="mr-2 fa fa-twitter"></i>'.html_safe, "#" %>
-        <%= link_to '<i class="mr-2 fa fa-instagram"></i>'.html_safe, "#" %>
-        <%= link_to '<i class="mr-2 fa fa-snapchat-ghost"></i>'.html_safe, "#" %>
-        <%= link_to 'Login',  "#" %>
+        
+        <div class="wrapper">
+          <ul class="social-icons icon-circle  icon-rotate list-unstyled list-inline"> 
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-facebook"></i></a>
+              <% end %>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-instagram"></i></a>
+              <% end %>
+            </li>
+            <li><%= link_to '<i class="fa fa-snapchat-ghost"></i>'.html_safe, root_path  %></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </div>
+        
       </div>
     </div>
 
