@@ -1,0 +1,47 @@
+#banner-welcome{
+  height: 300px;
+  min-height: 300px;
+  background: #083659;
+  #banner-title{
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+  }
+
+  #banner-description{
+    font-size: 1em;
+    text-align: center;
+    font-weight: 300px;
+    color: #fff;
+  }
+}
+
+.h200{
+  width: 200px;
+  border-bottom: 1px solid #FF0000;
+  margin: 5px auto 10px;
+}
+
+.search-promo {
+  max-width: 900px;
+  margin: 40px auto;
+  input {
+      height: 55px;
+      border: 0px;
+      border-radius: 3px;
+      color: #8c8c8c;
+      font-size: 16px;
+      font-weight: 300;
+      padding: 0px 20px;
+  }
+}
+
+.btn-promo-search button {
+    height: 55px;
+    padding: 0px 50px;
+    font-size: 16px;
+    margin-left: 30px!important;
+    border-radius: 3px!important;
+}
