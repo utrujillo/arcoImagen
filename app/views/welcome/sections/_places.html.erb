@@ -1,0 +1,30 @@
+<section id="places">
+
+  <div class="container-fluid">
+
+    <% @places.each_with_index do |place, key| %>
+      <% if key%4 == 0 %>
+        <div class="row">
+      <% end %>
+        
+        <div class="col-6 col-sm-6 col-lg-3 my-3">
+          <div class="card mx-auto">
+            <%= image_tag "imageCap.svg", class: 'card-img-top' %>
+            <div class="card-body">
+              <p class="card-text red text-center"><%= place %></p>
+            </div>
+          </div>
+        </div>
+
+      <% if key%4 == 3 %>
+        </div>
+      <% end %>      
+    <% end %>
+    
+    <div class="d-flex justify-content-center">
+      <button type="button" class="all-places bg-red">Ver todos los lugares</button>  
+    </div>
+
+  </div>
+
+</section>

@@ -1,0 +1,13 @@
+.all-places{
+  border-radius: 8px;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 40px;
+  margin-bottom: 10px;
+  &:hover{
+    background: #C70000;
+    cursor: pointer;
+  }
+}
+
+
