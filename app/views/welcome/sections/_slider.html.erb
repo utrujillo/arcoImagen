@@ -1,0 +1,37 @@
+<% if @imageSlider.present? %>
+<section id="#imageSlider">
+  <div id="carouselExampleIndicator" class="carousel slide" data-ride="carousel" data-interval="5000">
+    
+    <!-- Indicadores -->
+    <ol class="carousel-indicators">
+    <% @imageSlider.each_with_index do |image, key| %>
+      <% active = ( key == 0 ) ? 'active' : '' %>
+      <li data-target='#carouselExampleIndicator' data-slide-to="<%= key %>" class="<%= active %>"></li>
+    <% end %>
+    </ol>
+    
+    
+    <!-- Imagenes del carrusel -->
+    <div class="carousel-inner">
+      <% @imageSlider.each_with_index do |image, key| %>
+      <% active = ( key == 0 ) ? 'active' : '' %>
+        <div class="carousel-item <%= active %>">
+          <%= image_tag "slider/#{File.basename(image)}", class: 'd-block w-100' %>
+          <div class="carousel-caption d-none d-md-block w-50 mx-auto">
+            <h3><span class="red">1000+</span> Lugares</h3>
+            <p>Para promocionar tu producto, tu marca, lo que necesites, estamos para apoyarte a mejorar tus ingresos.</p> 
+          </div>
+        </div>
+      <% end %>  
+    </div>
+    
+    <!-- Flechas Siguiente/Atras -->
+    <a class="carousel-control-prev" href="#carouselExampleIndicator" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicator" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+  </div>
+</section>
+<% end %>
