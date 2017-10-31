@@ -9,6 +9,95 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require welcome
  */
 @import "bootstrap";
+@import "font-awesome";
+
+/*
+  Tipografias
+ */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,600');
+
+html,body{ font-family: 'Lato', sans-serif; font-size: 1em; font-weight: 300; }
+
+/*
+    Header Section
+ */
+#topSocial{
+  background: #D8D8D8;
+  border: 1px soli #979797;
+  color: #565A5C;
+  font-size: .9em;
+  a{ text-decoration: none; color: #565A5C; }
+  ul{ padding: 0; margin: 0; }
+  .fa{ font-size: 1.3em; }
+  .list-unstyled { padding-left: 0; list-style: none; }
+  .list-inline li { display: inline-block; padding-right: 5px; padding-left: 5px; }
+  
+  .social-icons .fa {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    color: rgba(86, 90, 92, 0.5);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: #fff;
+    &.fa-facebook:hover, 
+    &.fa-facebook:active { color: #416097; }
+    &.fa-twitter:hover, 
+    &.fa-twitter:active { color: #00a5e6; }
+    &.fa-instagram:hover, 
+    &.fa-instagram:active { color: #e9276f; }
+    &.fa-snapchat-ghost:hover, 
+    &.fa-snapchat-ghost:active { color: rgba(86, 90, 92, 0.8); }
+  }
+  .social-icons.icon-circle .fa{ border-radius: 50%; }
+  .social-icons.icon-rounded .fa{ border-radius:5px; }
+  .social-icons.icon-flat .fa{ border-radius: 0; }
+
+  .social-icons.icon-rotate .fa:hover, .social-icons.icon-rotate .fa:active { 
+    -webkit-transform: scale(1.1) rotate(360deg);
+    -moz-transform: scale(1.1) rotate(360deg);
+    -ms-transform: scale(1.1) rotate(360deg);
+    -o-transform: scale(1.1) rotate(360deg);
+    transform: scale(1.1) rotate(360deg);
+  }
+
+}
+
+
+/*
+  Navbar
+ */
+.navbar-light { 
+  background: #ffffff;
+  a{
+    color: #565A5C;
+    text-decoration: none;
+    font-weight: 400;
+  }
+}
+.navbar-logotxt{ color: #FF0000; }
+
+/*
+  Footer
+ */ 
+#footer{
+  width: 100%;
+  background: #F8F8F8;
+  color: #FF0000;
+  font-weight: 400;
+  font-size: .85em;
+}
+
+/*
+  Colors
+ */
+.red{ color: #FF0000; }
+.bg-red{ background: #FF0000;  }

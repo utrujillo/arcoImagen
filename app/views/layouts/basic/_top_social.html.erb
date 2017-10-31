@@ -1,0 +1,36 @@
+<div id="topSocial">
+  <div class="d-flex justify-content-between">
+    
+    <div class="p-1 align-self-center">
+      <i class="fa fa-phone" aria-hidden="true"></i>
+      Contactanos al numero +01 744 1234567
+    </div>
+    
+    <div class="p-2  align-self-center">
+      <div class="d-flex p-1">
+        
+        <div class="wrapper">
+          <ul class="social-icons icon-circle  icon-rotate list-unstyled list-inline"> 
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-facebook"></i></a>
+              <% end %>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-twitter"></i>
+              <% end %>
+            <li>
+              <%= link_to root_path do %>
+                <i class="fa fa-instagram"></i></a>
+              <% end %>
+            </li>
+            <li><%= link_to '<i class="fa fa-snapchat-ghost"></i>'.html_safe, root_path  %></li>
+            <li><a href="#">Login</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
