@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ArcoImagen</title>
+  <%= csrf_meta_tags %>
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body class="devise-login">
+  
+  <div class="alerts">
+
+    <% if notice.present? %>
+      <div class="alert alert-info alert-dismissible mx-auto" role="alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if alert.present? %>
+      <div class="alert alert-danger alert-dismissible mx-auto" role="alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+        <%= alert %>
+      </div>
+    <% end %>
+    
+  </div>
+
+  <%= yield %>
+  
+</body>
+</html>
