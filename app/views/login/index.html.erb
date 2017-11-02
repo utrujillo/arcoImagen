@@ -1,0 +1,28 @@
+<%= form_for :user, url: session_path(:user), html: { class: 'login' } do |f| %>  
+  <fieldset>
+    
+    <legend class="legend">Iniciar Sesión</legend>
+    
+    <div class="input">
+      <%= f.email_field :email, placeholder: 'E-mail', autofocus: true, required: true %>
+      <span><i class="fa fa-envelope-o"></i></span>
+    </div>
+    
+    <div class="input">
+      <%= f.password_field :password, placeholder: 'Contraseña', required: true %>
+      <span><i class="fa fa-lock"></i></span>
+    </div>
+    
+    <button type="submit" class="submit"><i class="fa fa-long-arrow-right"></i></button>
+    
+  </fieldset>
+  
+  <div class="feedback"></div> 
+<% end %>
+
+<div class="mx-auto mt-4 another-links">
+  <div class="text-center">
+    <%= link_to "Forgot your password?", new_password_path(:user) %>
+  </div>
+</div>
+
