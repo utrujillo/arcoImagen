@@ -1,0 +1,2 @@
+class CatPlace < ApplicationRecord
+end
