@@ -8,7 +8,25 @@
 </div>
 
 <ul class="list-group">
-  <%= link_to "Catalogo de etiquetas", admin_cat_label_index_path, class: 'list-group-item list-group-item-action' %>
-  <%= link_to "Catalogo de lugares", admin_cat_label_index_path, class: 'list-group-item list-group-item-action' %>
-  <%= link_to "Ubicaciones", admin_cat_label_index_path, class: 'list-group-item list-group-item-action' %>
+
+  <% if params[:controller] == 'admin/cat_labels' %>
+    <%= link_to "Catalogo de etiquetas", admin_cat_labels_path, class: 'list-group-item list-group-item-action active' %>
+  <% else %>
+    <%= link_to "Catalogo de etiquetas", admin_cat_labels_path, class: 'list-group-item list-group-item-action' %>
+  <% end %>
+
+  <% if params[:controller] == 'admin/cat_places' %>
+    <%= link_to "Catalogo de lugares", root_path, class: 'list-group-item list-group-item-action active' %>
+  <% else %>
+    <%= link_to "Catalogo de lugares", root_path, class: 'list-group-item list-group-item-action' %>
+  <% end %>
+
+  <% if params[:controller] == 'admin/places' %>
+    <%= link_to "Ubicaciones", root_path, class: 'list-group-item list-group-item-action active' %>
+  <% else %>
+    <%= link_to "Ubicaciones", root_path, class: 'list-group-item list-group-item-action' %>
+  <% end %>
+  
 </ul>
+
+<%= 'class=active' if params[:controller] == 'admin/categories' %>

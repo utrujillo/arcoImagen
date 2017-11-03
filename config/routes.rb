@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   # Custom resources
   namespace :admin do
     resources :welcome, only: [:index]
-    resources :cat_label
+    resources :cat_labels
   end
 end

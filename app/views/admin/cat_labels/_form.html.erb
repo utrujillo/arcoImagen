@@ -1,0 +1,24 @@
+<% if @label.errors.any? %>
+  <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <b>Alerta !! </b><%= @label.errors.count > 1 ? "Se han encontrado #{@label.errors.count} errores:": "Se ha encontrado #{@label.errors.count} error:" %>
+
+      <% @label.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+  </div>
+<% end %>
+
+<%= form_for [ "admin", @label ] do |f| %>
+  <div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-4">Nombre Etiqueta</label>
+    <div class="col-lg-9 col-sm-8">
+      <%= f.text_field :nombre, autofocus: true, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="pull-right">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
+  <div class="clearfix"></div>
+<% end %>
