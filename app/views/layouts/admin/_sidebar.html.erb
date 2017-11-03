@@ -1,0 +1,14 @@
+<div class="card mb-3">
+  <%= image_tag "imageCap.svg", class: 'card-img-top' %>
+  <div class="card-body">
+    <p class="card-text text-center">
+      <small class="text-muted"><%= "#{current_user.nombre} #{current_user.apellidos}" %></small>
+    </p>
+  </div>
+</div>
+
+<ul class="list-group">
+  <%= link_to "Catalogo de etiquetas", admin_cat_label_index_path, class: 'list-group-item list-group-item-action' %>
+  <%= link_to "Catalogo de lugares", admin_cat_label_index_path, class: 'list-group-item list-group-item-action' %>
+  <%= link_to "Ubicaciones", admin_cat_label_index_path, class: 'list-group-item list-group-item-action' %>
+</ul>

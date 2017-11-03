@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
   devise_for :users
+
   root 'welcome#index'
   
+  # Autenthicate principal
   get 'login/index'
+
+  # Custom resources
+  namespace :admin do
+    resources :welcome, only: [:index]
+    resources :cat_label
+  end
 end

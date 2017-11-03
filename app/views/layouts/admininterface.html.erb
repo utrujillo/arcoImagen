@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ArcoImagen - Admin interface</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <%= render 'layouts/admin/navbar' %>
+    
+    <div class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <%= render 'layouts/admin/sidebar.html.erb' %>
+        </div>
+        
+        <main role="main" class="col-lg-9 col-md-8 col-sm-6">
+          <div class="card border-danger">
+            <div class="card-header bg-red text-white">
+              <% result = params[:controller].split(/\//) %>
+              <span class="pull-left"><%= result[1] %></span>
+              <span class="pull-right">#<%= params[:action] if params[:action] != 'index' %></span>
+              <div class="clearfix"></div>
+            </div>
+            <div class="card-body">
+              <%= yield %>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    
+  </body>
+</html>
