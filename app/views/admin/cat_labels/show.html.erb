@@ -1,0 +1,24 @@
+<div class="pull-right">
+  <%= link_to "Listado", admin_cat_labels_path, class: 'btn btn-light' %>
+  <%= link_to "Nueva", new_admin_cat_label_path, class: 'btn btn-danger' %>
+  <%= link_to "Editar", edit_admin_cat_label_path, class: 'btn btn-secondary'  %>
+  <%= link_to "Eliminar", admin_cat_label_path, method: :delete, class: 'btn btn-dark'  %>
+</div>
+<div class="clearfix"></div>
+<br />
+
+<% if !notice.blank? %>
+  <div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <b>Información !!</b> <%= notice %>
+  </div>
+<% end %>
+
+<table class="table">
+  <tbody>
+    <tr>
+      <th width="20%">Nombre</th>
+      <td><%= @label.nombre %></td>
+    </tr>
+  </tbody>
+</table>
