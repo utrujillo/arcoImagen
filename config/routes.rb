@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :welcome, only: [:index]
     resources :cat_labels
     resources :cat_places
+    resources :places
   end
 end
