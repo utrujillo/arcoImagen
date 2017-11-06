@@ -21,9 +21,8 @@
         <main role="main" class="col-lg-9 col-md-8 col-sm-6">
           <div class="card border-danger">
             <div class="card-header bg-red text-white">
-              <% result = params[:controller].split(/\//) %>
-              <span class="pull-left"><%= result[1] %></span>
-              <span class="pull-right">#<%= params[:action] if params[:action] != 'index' %></span>
+              <span class="pull-left"><%= controller_name %></span>
+              <span class="pull-right">#<%= action_name %></span>
               <div class="clearfix"></div>
             </div>
             <div class="card-body">
@@ -33,6 +32,28 @@
         </main>
       </div>
     </div>
-    
+  
+  <!-- Loading google maps -->
+  <script type="text/javascript">
+    if(window.google) {
+      if( "<%= controller_name %>" == 'places' 
+          && ( "<%= action_name %>" == 'new' || "<%= action_name %>" == 'edit' ) 
+        ){
+        initMap();
+      }
+    } else {
+
+      if( "<%= controller_name %>" == 'places' 
+          && ( "<%= action_name %>" == 'new' || "<%= action_name %>" == 'edit' ) 
+        ){
+        $.ajax("https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&libraries=places&callback=initMap", {
+          crossDomain: true,
+          dataType: 'script'
+        });
+
+      }
+    }  
+  </script>
+  
   </body>
 </html>

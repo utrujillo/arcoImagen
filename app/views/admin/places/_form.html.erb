@@ -1,0 +1,60 @@
+<% if @place.errors.any? %>
+  <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <b>Alerta !! </b><%= @place.errors.count > 1 ? "Se han encontrado #{@place.errors.count} errores:": "Se ha encontrado #{@place.errors.count} error:" %>
+
+      <% @place.errors.full_messages.each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+  </div>
+<% end %>
+
+<%= form_for [ "admin", @place ] do |f| %>
+  
+  <div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-4">Lugar</label>
+    <div class="col-lg-9 col-sm-8">
+      <%= f.text_field :lugar, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-4">Dirección</label>
+    <div class="col-lg-9 col-sm-8">
+      <%= f.text_field :direccion, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-4">Latitud</label>
+    <div class="col-lg-3 col-sm-8">
+      <%= f.text_field :latitude, class: 'form-control' %>
+    </div>
+    <label class="col-form-label col-lg-3 col-sm-4">Longitud</label>
+    <div class="col-lg-3 col-sm-8">
+      <%= f.text_field :longitude, class: 'form-control' %>
+    </div>
+  </div>
+  
+  <input id="pac-input" class="controls" type="text" placeholder="Direccion">
+  <div id="map" class="mb-3"></div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-4">Descripcion Corta</label>
+    <div class="col-lg-9 col-sm-8">
+      <%= f.text_area :descripcion_corta, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-lg-3 col-sm-4">Descripcion Larga</label>
+    <div class="col-lg-9 col-sm-8">
+      <%= f.text_area :descripcion_larga, class: 'form-control' %>
+    </div>
+  </div>
+
+  <div class="pull-right">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
+  <div class="clearfix"></div>
+<% end %>

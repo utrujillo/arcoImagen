@@ -1,10 +1,10 @@
 <div class="pull-right">
-  <%= link_to "Nueva", new_admin_cat_label_path, class: 'btn btn-danger' %>
+  <%= link_to "Nueva", new_admin_place_path, class: 'btn btn-danger' %>
 </div>
 <div class="clearfix"></div>
 <br />
 
-<% if @labels.blank? %>
+<% if @places.blank? %>
   <div class="alert alert-info alert-dismissible mx-auto" role="alert">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
     No existen elementos en la base de datos, favor de crear algunos!!
@@ -15,28 +15,32 @@
       <tr>
         <th width="30">ID</th>
         <th width="75">Opciones</th>
-        <th>Etiqueta</th>
+        <th>Lugar</th>
+        <th>Latitud</th>
+        <th>Longitud</th>
       </tr>
     </thead>
     <tbody>
-      <% @labels.each do |item| %>
+      <% @places.each do |item| %>
         <tr>
           <th><%= item.id %></th>
           <td class="text-center">
             <!-- Boton mostrar -->
-            <%= link_to admin_cat_label_path item do %>
+            <%= link_to admin_place_path item do %>
               <i class="fa fa-eye text-muted"></i>
             <% end %>
             <!-- Boton editar -->
-            <%= link_to edit_admin_cat_label_path item do %>
+            <%= link_to edit_admin_place_path item do %>
               <i class="fa fa-pencil text-muted"></i>
             <% end %>
             <!-- Boton eliminar -->
-            <%= link_to admin_cat_label_path( item ), method: :delete, data: { confirm: '¿Estas seguro de eliminar este elemento?' } do %>
+            <%= link_to admin_place_path(item), method: :delete, data: { confirm: '¿Estas seguro de eliminar este elemento?' } do %>
               <i class="fa fa-trash-o text-muted"></i>
             <% end %>
           </td>
-          <td><%= item.nombre %></td>
+          <td><%= item.lugar %></td>
+          <td><%= item.latitude %></td>
+          <td><%= item.longitude %></td>
         </tr>
       <% end %>
     </tbody>

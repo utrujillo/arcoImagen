@@ -1,0 +1,56 @@
+<div class="pull-right">
+  <%= link_to "Listado", admin_places_path, class: 'btn btn-light' %>
+  <%= link_to "Nueva", new_admin_place_path, class: 'btn btn-danger' %>
+  <%= link_to "Editar", edit_admin_place_path, class: 'btn btn-secondary'  %>
+  <%= link_to "Eliminar", admin_place_path, method: :delete, class: 'btn btn-dark'  %>
+</div>
+<div class="clearfix"></div>
+<br />
+
+<% if !notice.blank? %>
+  <div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <b>Información !!</b> <%= notice %>
+  </div>
+<% end %>
+
+<div class="row">
+  <!-- Información -->
+  <div class="col-lg-6 col-sm-12 col-12">
+    <table class="table">
+      <tbody>
+        <tr>
+          <th width="20%">Dirección</th>
+          <td><%= @place.direccion %></td>
+        </tr>
+        <tr>
+          <th>Latitud</th>
+          <td><%= @place.latitude %></td>
+        </tr>
+        <tr>
+          <th>Longitud</th>
+          <td><%= @place.longitude %></td>
+        </tr>
+        <tr class="text-center">
+          <th colspan="2">Descripción Corta</th>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-justify"><%= @place.descripcion_corta %></td>
+        </tr>
+        <tr class="text-center">
+          <th colspan="2">Descripción Larga</th>
+        </tr>
+        <tr>
+          <td colspan="2" class="text-justify"><%= @place.descripcion_larga %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Mapa -->
+  <div class="col-lg-6 col-sm-12 col-12">
+    <div class="text-center">
+      <%= static_map_for( {lat: @place.latitude, lng: @place.longitude}, {} ) %>
+    </div>
+  </div>
+</div>
