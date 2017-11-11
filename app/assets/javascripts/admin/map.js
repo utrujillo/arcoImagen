@@ -90,8 +90,6 @@ function initMap() {
         scaledSize: new google.maps.Size(25, 25)
       };
 
-      console.log( place );
-      
       document.getElementById("place_latitude").value = place.geometry.location.lat();
       document.getElementById("place_longitude").value = place.geometry.location.lng();
       document.getElementById("place_direccion").value = place.formatted_address;
