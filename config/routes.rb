@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'welcome#index'
+
+  get 'welcome/get_locations'
   
   # Autenthicate principal
   get 'login/index'

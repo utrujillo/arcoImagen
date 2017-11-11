@@ -2,6 +2,9 @@ class LoginController < ApplicationController
   layout 'devise_login'
   
   def index
+    if current_user.present?
+      redirect_to admin_welcome_index_path
+    end
   end
 
   def resource_name
