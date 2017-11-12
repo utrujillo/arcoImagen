@@ -5,20 +5,10 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Historia en Pivotal tracker https://www.pivotaltracker.com/n/projects/2122618
 
-* System dependencies
+* Ejemplo de application.yml https://drive.google.com/open?id=1Q-lcukZN38uruTNORejbwu393UvkiXIv
 
-* Configuration
+* Archivo de Instalación RoR en Windows usando vagrant https://drive.google.com/open?id=1zklSuiYY0C2CWKrZ6sdJpJ6RyQ2pPviQ
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Presentación RoR del taller http://prezi.com/s-oksqoz7nha/?utm_campaign=share&utm_medium=copy
